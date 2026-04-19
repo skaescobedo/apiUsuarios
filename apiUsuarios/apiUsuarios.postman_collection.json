@@ -1,0 +1,374 @@
+{
+  "info": {
+    "_postman_id": "a5721b62-1a56-4ee0-9ff4-cf3620b61c8d",
+    "name": "apiUsuarios",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "01 Get Users (seed filters + search)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/users?roleId={{seedRoleId}}&branchId={{seedBranchId}}&search=luis",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "roleId",
+                  "value": "{{seedRoleId}}"
+                },
+                {
+                  "key": "branchId",
+                  "value": "{{seedBranchId}}"
+                },
+                {
+                  "key": "search",
+                  "value": "luis"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "02 Get User By Id (seed)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/users/{{seedUserId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "{{seedUserId}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "03 Update User (seed)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Luis\",\n  \"lastName\": \"Gómez\",\n  \"secondLastName\": \"Martínez\",\n  \"email\": \"luis.gomez@empresa.com\",\n  \"phone\": \"6671234567\",\n  \"isActive\": true,\n  \"roleId\": 1,\n  \"branchId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/{{seedUserId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "{{seedUserId}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "04 Create User (new)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Fernanda\",\n  \"lastName\": \"Ibarra\",\n  \"secondLastName\": \"Noriega\",\n  \"email\": \"fernanda.ibarra@empresa.com\",\n  \"phone\": \"6679990001\",\n  \"isActive\": true,\n  \"roleId\": 2,\n  \"branchId\": 3\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "users"
+              ]
+            }
+          }
+        },
+        {
+          "name": "05 Delete User (seed - opcional)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/users/{{seedUserId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "{{seedUserId}}"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Roles",
+      "item": [
+        {
+          "name": "01 Get Roles",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/roles",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "roles"
+              ]
+            }
+          }
+        },
+        {
+          "name": "02 Get Role By Id (seed)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/roles/{{seedRoleId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "roles",
+                "{{seedRoleId}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "03 Update Role (seed)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Administrador\",\n  \"description\": \"Responsable de la administración general del sistema\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/roles/{{seedRoleId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "roles",
+                "{{seedRoleId}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "04 Create Role (new)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Analista\",\n  \"description\": \"Analiza reportes y operaciones\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/roles",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "roles"
+              ]
+            }
+          }
+        },
+        {
+          "name": "05 Delete Role (seed - opcional)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/roles/{{seedRoleId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "roles",
+                "{{seedRoleId}}"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Branches",
+      "item": [
+        {
+          "name": "01 Get Branches",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/branches",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "branches"
+              ]
+            }
+          }
+        },
+        {
+          "name": "02 Get Branch By Id (seed)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/branches/{{seedBranchId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "branches",
+                "{{seedBranchId}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "03 Update Branch (seed)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Sucursal Los Mochis Centro\",\n  \"street\": \"Blvd. Antonio Rosales\",\n  \"exteriorNumber\": \"985\",\n  \"interiorNumber\": \"Local 3\",\n  \"neighborhood\": \"Centro\",\n  \"city\": \"Los Mochis\",\n  \"state\": \"Sinaloa\",\n  \"postalCode\": \"81200\",\n  \"country\": \"México\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/branches/{{seedBranchId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "branches",
+                "{{seedBranchId}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "04 Create Branch (new)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Sucursal Guasave Centro\",\n  \"street\": \"Blvd. Central\",\n  \"exteriorNumber\": \"120\",\n  \"interiorNumber\": \"Oficina 4\",\n  \"neighborhood\": \"Centro\",\n  \"city\": \"Guasave\",\n  \"state\": \"Sinaloa\",\n  \"postalCode\": \"81000\",\n  \"country\": \"México\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/branches",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "branches"
+              ]
+            }
+          }
+        },
+        {
+          "name": "05 Delete Branch (seed - opcional)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/branches/{{seedBranchId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "branches",
+                "{{seedBranchId}}"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5086"
+    },
+    {
+      "key": "seedUserId",
+      "value": "1"
+    },
+    {
+      "key": "seedRoleId",
+      "value": "1"
+    },
+    {
+      "key": "seedBranchId",
+      "value": "1"
+    }
+  ]
+}
